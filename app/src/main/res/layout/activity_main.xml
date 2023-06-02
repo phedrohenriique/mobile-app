@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/baseLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="Base"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/percentLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="@+id/baseLabel"
+        app:layout_constraintTop_toBottomOf="@+id/baseLabel"
+        tools:text="24%" />
+
+    <TextView
+        android:id="@+id/tipLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Tip"
+        app:layout_constraintEnd_toEndOf="@id/baseLabel"
+        app:layout_constraintTop_toBottomOf="@+id/percentLabel"
+        tools:layout_editor_absoluteX="2dp" />
+
+    <TextView
+        android:id="@+id/totalLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Total"
+        app:layout_constraintEnd_toEndOf="@id/baseLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tipLabel"
+        tools:layout_editor_absoluteX="4dp" />
+
+    <EditText
+        android:id="@+id/baseAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:ems="8"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toEndOf="@+id/baseLabel"
+        app:layout_constraintTop_toTopOf="@id/baseLabel"
+        app:layout_constraintBottom_toBottomOf="@id/baseLabel"
+        tools:layout_editor_absoluteY="6dp" />
+
+    <SeekBar
+        android:id="@+id/seekBarAmount"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:max="30"
+        app:layout_constraintStart_toStartOf="@+id/baseAmount"
+        app:layout_constraintBottom_toBottomOf="@id/percentLabel"
+        app:layout_constraintTop_toTopOf="@id/percentLabel"
+        tools:layout_editor_absoluteY="88dp" />
+
+    <TextView
+        android:id="@+id/tipAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="@+id/tipLabel"
+        app:layout_constraintStart_toStartOf="@+id/seekBarAmount"
+        app:layout_constraintTop_toTopOf="@+id/tipLabel"
+        tools:text="19.96" />
+
+    <TextView
+        android:id="@+id/totalAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="@+id/totalLabel"
+        app:layout_constraintStart_toStartOf="@+id/tipAmount"
+        app:layout_constraintTop_toTopOf="@+id/totalLabel"
+        tools:text="101.11" />
+</androidx.constraintlayout.widget.ConstraintLayout>
